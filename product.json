@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 5,
+    "name": "Skullcandy - Crusher anc 2 wireless headphones",
+    "price": 299,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 5,
+    "name": "Beats Studio Pro",
+    "price": 349,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 4,
+    "name": "Sony - WH-CH720N Wireless Noise Canceling",
+    "price": 149,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 5,
+    "name": "Skullcandy - Rail True Wireless Earbuds",
+    "price": 99,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  },
+  {
+    "id": 5,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 5,
+    "name": "Beats Studio Pro",
+    "price": 249,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  },
+  {
+    "id": 6,
+    "image": {
+      "src": "/co.webp",
+      "alt": "sumple-kuping"
+    },
+    "rating": 4,
+    "name": "JBL Reflect Flow Pro+ Bluetooth Truly Wireless Sports",
+    "price": 179,
+    "description": "With its soft shape and color, this spacious basket is just as decorative wherever you choose to put it."
+  }
+]
