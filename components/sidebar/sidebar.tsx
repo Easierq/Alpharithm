@@ -8,7 +8,6 @@ import { MenuIcon, X } from "lucide-react";
 
 const routes = [
   { id: 1, title: "Managers", url: "/managers" },
-  { id: 2, title: "Identites", url: "/identities" },
   { id: 3, title: "Jobs Page", url: "/jobs" },
   { id: 4, title: "Form actions", url: "/forms" },
   { id: 5, title: "Form templates", url: "/form-templates" },

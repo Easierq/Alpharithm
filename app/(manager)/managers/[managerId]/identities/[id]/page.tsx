@@ -5,8 +5,14 @@ import { Container } from "@/components/container";
 
 const baseUrl = process.env.BASE_URL;
 
-const IdentitesId = async ({ params }: { params: { id: string } }) => {
-  const identity = await getData<Identity>(`${baseUrl}/managers/${params.id}`);
+const IdentitesId = async ({
+  params,
+}: {
+  params: { managerId: string; id: string };
+}) => {
+  const identity = await getData<Identity>(
+    `${baseUrl}/managers/${params.managerId}/identities/${params.id}`
+  );
 
   return (
     <Container>

@@ -23,12 +23,11 @@ import {
 import { toast } from "react-hot-toast";
 import { Input } from "@/components/ui/input";
 import { DeleteModal } from "@/components/delete-modal";
-import { Identity, Manager } from "@/types";
+import { Identity } from "@/types";
 
 const formSchema = z.object({
   identity: z.string().min(1),
   identityType: z.string().min(1),
-  verificationStatus: z.string().min(1),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -42,7 +41,6 @@ export const IdentityForm = ({ identityData }: Props) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(identityData);
 
   const initial = identityData?.identity;
   const title = initial ? "Edit Identity" : "Create Identity";
@@ -57,13 +55,10 @@ export const IdentityForm = ({ identityData }: Props) => {
     defaultValues: identityData || {
       identity: "",
       identityType: "",
-      verificationStatus: "",
     },
   });
 
   const onSubmit = async (data: FormValues) => {
-    console.log(data);
-
     try {
       setLoading(true);
       if (identityData?.createdAt) {
@@ -71,26 +66,22 @@ export const IdentityForm = ({ identityData }: Props) => {
           `/managers/${params.managerId}/identities/${params.id}`,
           data
         );
+        // {
+        //   identity: data.identity,
+        //   identityType: data.identityType,
+        // },
       } else {
-        await apiRequest.post(
-          `/managers/${params.managerId}/identities`,
-          {
-            fullName: "Dave Doe",
-            companyName: "Alpharithm Investments",
-            email: "manager@email.com",
-            companyDescription: "We build AI work models for the future...",
-          },
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        await apiRequest.post(`/managers/${params.managerId}/identities`, {
+          identity: "third.com or example@domain.com",
+          identityType: "third",
+        });
       }
       router.refresh();
       router.push(`/managers/${params.managerId}/identities`);
       toast.success(toastMessage);
     } catch (error) {
+      console.log(error);
+
       toast.error("something went wrong");
     } finally {
       setLoading(false);
@@ -179,7 +170,7 @@ export const IdentityForm = ({ identityData }: Props) => {
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="verificationStatus"
               render={({ field }) => (
@@ -195,7 +186,7 @@ export const IdentityForm = ({ identityData }: Props) => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
           </div>
           <Button
             disabled={loading}

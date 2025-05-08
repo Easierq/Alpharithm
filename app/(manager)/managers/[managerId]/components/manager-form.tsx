@@ -25,6 +25,7 @@ import { toast } from "react-hot-toast";
 import { Input } from "@/components/ui/input";
 import { DeleteModal } from "@/components/delete-modal";
 import { Manager } from "@/types";
+import Link from "next/link";
 
 const formSchema = z.object({
   fullName: z.string().min(1),
@@ -45,7 +46,6 @@ export const ManagerForm = ({ managerData }: Props) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  console.log(managerData);
 
   const initial = managerData?.fullName;
   const title = initial ? "Edit Manager" : "Create Manager";
@@ -119,6 +119,22 @@ export const ManagerForm = ({ managerData }: Props) => {
         <div>
           <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
           <p className="text-sm text-muted-foreground">{description}</p>
+          {managerData?.createdAt && (
+            <div className="flex items-center justify-center gap-6 my-4">
+              <Link
+                href={`/managers/${params.managerId}/identities/new`}
+                className="flex items-center justify-center bg-sky-700 text-white text-sm hover:opacity-90 rounded-full h-9 p-3"
+              >
+                Add Identity
+              </Link>
+              <Link
+                href={`/managers/${params.managerId}/identities`}
+                className="flex items-center justify-center text-sky-700 font-bold text-sm hover:opacity-90 rounded-full h-9 p-3"
+              >
+                All Identities
+              </Link>
+            </div>
+          )}
         </div>
         {managerData?.createdAt && (
           <Button

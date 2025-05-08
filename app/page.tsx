@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const links = [
   { id: 1, title: "Managers Page", url: "/managers" },
-  { id: 2, title: "Identites Page", url: "/identities" },
   { id: 3, title: "Jobs Page", url: "/jobs" },
   { id: 4, title: "Form actions", url: "/forms" },
   { id: 5, title: "Form templates", url: "/form-templates" },
@@ -23,7 +22,7 @@ const Home = async () => {
             <Link
               href={item.url}
               key={item.id}
-              className="h-[200px] w-full bg-sky-300 rounded-2xl p-3 flex items-center justify-center"
+              className="h-[200px] w-full bg-slate-100 border-2 border-slate-200 rounded-2xl p-3 flex items-center justify-center"
             >
               <p className="text-xl font-semibold w-max text-slate-700 hover:underline">
                 {item.title}

@@ -5,7 +5,6 @@ import Link from "next/link";
 
 const routes = [
   { id: 1, title: "Managers", url: "/managers" },
-  { id: 2, title: "Identites", url: "/identities" },
   { id: 3, title: "Jobs", url: "/jobs" },
   { id: 4, title: "Actions", url: "/forms" },
   { id: 5, title: "Templates", url: "/form-templates" },

@@ -13,6 +13,13 @@ export interface Identity {
   createdAt: string;
 }
 
+export interface IdentityArray {
+  id: string;
+  identities: Identity[];
+  count: number;
+  createdAt: string;
+}
+
 export interface Job {
   id: string;
   title: string;
